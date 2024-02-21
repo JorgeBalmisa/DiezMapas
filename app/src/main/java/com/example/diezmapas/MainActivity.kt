@@ -43,6 +43,7 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.diezmapas.Data.DataSource
 import com.example.diezmapas.Data.Mapa
 import com.example.diezmapas.Data.mapas
 import com.example.diezmapas.ui.theme.DiezMapasTheme
@@ -120,7 +121,7 @@ fun MapaApp() {
         }
     ) {it ->
         LazyColumn(contentPadding = it) {
-            items(mapas) {
+            items(DataSource().getMapas()) {
                 MapaTarjeta(
                     mapa = it,
                     modifier = Modifier.padding(dimensionResource(R.dimen.padding_small))
